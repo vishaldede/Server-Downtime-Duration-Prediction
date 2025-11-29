@@ -62,31 +62,15 @@ Output: **`server_downtime_dataset_cleaned.csv`**
 
 ---
 
-## 🗄️ SQL Analysis (7 Queries)
+## 🗄️ SQL Analysis
 
-Stored the dataset in **MySQL** and explored insights via SQL:
-
-1. Average downtime by region  
-2. Average downtime by OS  
-3. Top 5 servers with highest downtime  
-4. Region-wise CPU vs downtime relationship  
-5. Monthly downtime trend  
-6. Outlier incidents (downtime > 3× mean)  
-7. Avg CPU and Memory load by OS  
+Stored the dataset in **MySQL** and explored insights via SQL
 
 ---
 
 ## 📊 Exploratory Data Analysis (EDA)
 
-Performed using **Pandas, Matplotlib, Seaborn** to answer 7 questions:
-
-1. Downtime distribution  
-2. Average downtime by region  
-3. Average downtime by OS  
-4. Correlation heatmap  
-5. CPU vs Downtime scatter  
-6. Downtime trend over time  
-7. Temperature vs Downtime regression  
+Performed using **Pandas, Matplotlib, Seaborn**
 
 ---
 
