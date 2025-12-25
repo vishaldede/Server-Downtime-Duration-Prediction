@@ -10,7 +10,7 @@ A **Machine Learning Regression Project** that predicts **server downtime durati
 |--------|-------------|
 | **Goal** | Predict server downtime duration using supervised regression |
 | **Technique** | Supervised ML (Regression) |
-| **Algorithms Used** | Linear, Ridge, Lasso, Decision Tree, Random Forest, Gradient Boosting, XGBoost |
+| **Algorithms Used** | Linear, Lasso, Ridge, Decision Tree, Random Forest, Support Vector Machine, K-Nearest Neighbors |
 | **Deployment** | Streamlit Web App |
 | **Database** | MySQL |
 | **Dataset** | Synthetic but realistic dataset with 10,000+ records, 10 columns, and realistic data inconsistencies |
@@ -19,13 +19,13 @@ A **Machine Learning Regression Project** that predicts **server downtime durati
 
 ## 🧩 Features
 
-- Dataset with **strong feature correlations (R² ≈ 0.88–0.9)**  
+- Dataset with **strong feature correlations (R² ≈ 0.87–0.9)**
 - **Real-world data imperfections** — missing values, inconsistent formatting, abbreviations, outliers, duplicates  
 - **Comprehensive data cleaning** and preprocessing pipeline  
-- **SQL-based analytics** (7 business-style insights)  
+- **SQL-based analytics** 
 - **Exploratory Data Analysis (EDA)** using Pandas, Matplotlib, Seaborn  
 - **Model comparison** across multiple regression algorithms  
-- **Cross-validation**, model evaluation (R², MAE, RMSE)  
+- **Cross-validation**, model evaluation (R², MAE, MSE)  
 - **Deployed using Streamlit** for real-time predictions
 
 ---
@@ -77,37 +77,24 @@ Performed using **Pandas, Matplotlib, Seaborn**
 ## ⚙️ Machine Learning Pipeline
 
 ### **Preprocessing**
-- Scaled numeric features using `StandardScaler`  
-- Encoded categorical variables using `OneHotEncoder`  
-- Split data: 80% training / 20% testing  
+- Encoded categorical variables using OneHotEncoder
+- Scaled numeric features using StandardScaler 
+- Split data: 80% training / 20% testing
 
 ### **Models Trained**
 - Linear Regression  
-- Ridge / Lasso Regression  
+- Lasso / Ridge Regression  
 - Decision Tree  
 - Random Forest  
-- Gradient Boosting  
-- XGBoost  
+- Support Vector Machine
+- K-Nearest Neighbors
 
 ### **Evaluation Metrics**
 - **R² Score**
 - **Mean Absolute Error (MAE)**
-- **Root Mean Squared Error (RMSE)**
-- **5-Fold Cross Validation (CV R²)**
+- **Mean Squared Error (MSE)**
+- **5-Fold Cross Validation (CV)**
 
-| Model | R² | CV R² | MAE | RMSE |
-|--------|----|-------|------|------|
-| **XGBoost** | **0.89** | 0.87 | 8.5 | 11.2 |
-| Random Forest | 0.88 | 0.86 | 9.0 | 11.8 |
-| Gradient Boosting | 0.86 | 0.84 | 9.4 | 12.5 |
-| Linear Regression | 0.81 | 0.78 | 11.8 | 15.1 |
-
+LinearRegression | 0.87
 Saved best model → **`server_downtime_model.pkl`**
 
----
-
-## 🧪 Cross Validation
-
-from sklearn.model_selection import cross_val_score
-cv_score = cross_val_score(best_model, X_train, y_train, cv=5, scoring='r2')
-print(cv_score.mean())
