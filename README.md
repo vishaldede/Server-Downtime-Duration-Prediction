@@ -19,7 +19,7 @@ A **Machine Learning Regression Project** that predicts **server downtime durati
 
 ## 🧩 Features
 
-- Dataset with **strong feature correlations (R² ≈ 0.87–0.9)**
+- Dataset with **strong feature correlations (R² ≈ 0.90+)**
 - **Real-world data imperfections** — missing values, inconsistent formatting, abbreviations, outliers, duplicates  
 - **Comprehensive data cleaning** and preprocessing pipeline  
 - **SQL-based analytics** 
@@ -95,6 +95,6 @@ Performed using **Pandas, Matplotlib, Seaborn**
 - **Mean Squared Error (MSE)**
 - **5-Fold Cross Validation (CV)**
 
-LinearRegression | 0.87
+LinearRegression | 0.90
 Saved best model → **`server_downtime_model.pkl`**
 
