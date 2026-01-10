@@ -19,7 +19,6 @@ temp = st.slider("Temperature C", 10, 45, 30)
 
 # DataFrame
 input_df = pd.DataFrame({
-    #"Server_ID": ["SRV-999"],
     "Region": [region],
     "Os_Version": [os_version],
     "Cpu_Usage": [cpu],
@@ -34,3 +33,4 @@ if st.button("🔮Predict Downtime"):
     pred = model.predict(input_df)[0]
 
     st.success(f'Estimated Downtime Duration: {round(pred,2)}')
+
