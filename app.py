@@ -1,6 +1,5 @@
 # Load model
 import joblib
-import numpy as np
 import streamlit as st
 import pandas as pd
 
@@ -11,12 +10,12 @@ st.write("Predict server downtime (in minutes) based on system metrics.")
 
 # Input Fields
 region = st.selectbox("Region", ["US-East", "EU-West", "Asia-Pacific", "India-Central"])
-os_version = st.selectbox("Os_Version", ["Windows", "Linux"])
-cpu = st.slider("Cpu_Usage", 0, 100, 65)
-mem = st.slider("Memory_Usage", 0, 100, 70)
-disk = st.number_input("Disk_Iops", 500, 10000, 3000)
-latency = st.slider("Network_Latency_Ms", 20, 400, 100)
-temp = st.slider("Temperature_C", 10, 45, 30)
+os_version = st.selectbox("Os Version", ["Windows", "Linux"])
+cpu = st.slider("Cpu Usage", 0, 100, 65)
+mem = st.slider("Memory Usage", 0, 100, 70)
+disk = st.number_input("Disk Iops", 500, 10000, 3000)
+latency = st.slider("Network Latency_Ms", 20, 400, 100)
+temp = st.slider("Temperature C", 10, 45, 30)
 
 # DataFrame
 input_df = pd.DataFrame({
@@ -33,4 +32,5 @@ input_df = pd.DataFrame({
 # Predict
 if st.button("🔮Predict Downtime"):
     pred = model.predict(input_df)[0]
+
     st.success(f'Estimated Downtime Duration: {round(pred,2)}')
